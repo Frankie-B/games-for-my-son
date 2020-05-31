@@ -4,3 +4,9 @@
   height: 300px;
   width: 400px;
 }
+
+img[data-id] {
+  background: red;
+  height: 100px;
+  width: 100px;
+}

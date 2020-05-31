@@ -1,84 +1,79 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // logic for the card gam is going to go in here
-
-  const cardsArr = [
+  // cards
+  const cardArr = [
     {
-      name: jelly1,
-      img: './assets/images/Jelly (1).png',
+      name: 'jellyOne',
+      img: 'images/Jelly-1.png',
     },
     {
-      name: jelly1,
-      img: './assets/images/Jelly (1).png',
+      name: 'jellyOne',
+      img: 'images/Jelly-1.png',
     },
     {
-      name: jelly2,
-      img: './assets/images/Jelly (2).png',
+      name: 'jellyTwo',
+      img: 'images/Jelly-2.png',
     },
     {
-      name: jelly2,
-      img: './assets/images/Jelly (2).png',
+      name: 'jellyTwo',
+      img: 'images/Jelly-2.png',
     },
     {
-      name: jelly3,
-      img: './assets/images/Jelly (3).png',
+      name: 'jellyThree',
+      img: 'images/Jelly-3.png',
     },
     {
-      name: jelly3,
-      img: './assets/images/Jelly (3).png',
+      name: 'jellyThree',
+      img: 'images/Jelly-3.png',
     },
     {
-      name: jelly4,
-      img: './assets/images/Jelly (4).png',
+      name: 'jellyFour',
+      img: 'images/Jelly-4.png',
     },
     {
-      name: jelly4,
-      img: './assets/images/Jelly (4).png',
+      name: 'jellyFour',
+      img: 'images/Jelly-4.png',
     },
     {
-      name: jelly5,
-      img: './assets/images/Jelly (5).png',
+      name: 'jellyFive',
+      img: 'images/Jelly-5.png',
     },
     {
-      name: jelly5,
-      img: './assets/images/Jelly (5).png',
+      name: 'jellyFive',
+      img: 'images/Jelly-5.png',
     },
     {
-      name: jelly6,
-      img: './assets/images/Jelly (6).png',
+      name: 'jellySix',
+      img: 'images/Jelly-6.png',
     },
     {
-      name: jelly6,
-      img: './assets/images/Jelly (6).png',
-    },
-    {
-      name: jelly7,
-      img: './assets/images/Jelly (7).png',
-    },
-    {
-      name: jelly7,
-      img: './assets/images/Jelly (7).png',
-    },
-    {
-      name: jelly8,
-      img: './assets/images/Jelly (8).png',
-    },
-    {
-      name: jelly8,
-      img: './assets/images/Jelly (8).png',
+      name: 'jellySix',
+      img: 'images/Jelly-6.png',
     },
   ];
 
   // Game board
   const grid = document.querySelector('.grid');
+  let cardsChosen = [];
+  cardsChosenId = [];
 
   // Create Board
   function createBoard() {
-    for (let i = 0; i < cardsArr.length; i++) {
+    for (let i = 0; i < cardArr.length; i++) {
       let card = document.createElement('img');
-      card.setAttribute('src', './assets/images/white.png');
-      card.setAttribute('data-id', 1);
-      /
+      card.setAttribute('src', 'images/blank.png');
+      card.setAttribute('data-id', i);
+      // card.addEventListener('click', flipCard);
       grid.appendChild(card);
     }
   }
+
+  // check for matches
+
+  // flip cards over
+  function flipCard() {
+    let cardId = document.querySelector('data-id');
+    cardsChosen.push(cardArr[cardId].name);
+  }
+
+  createBoard();
 });
