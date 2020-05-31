@@ -75,6 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
   function createBoard() {
     for (let i = 0; i < cardsArr.length; i++) {
       let card = document.createElement('img');
+      card.setAttribute('src', './assets/images/white.png');
+      card.setAttribute('data-id', 1);
+      /
+      grid.appendChild(card);
     }
   }
 });
