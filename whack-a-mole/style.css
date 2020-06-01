@@ -12,5 +12,8 @@
   width: 200px;
 }
 
-.mole {
+.pig {
+  background-image: url('pig.png');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
