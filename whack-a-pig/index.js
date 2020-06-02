@@ -28,7 +28,7 @@ function randomSquare() {
 
 function movePig() {
   let timerId = null;
-  timerId = setInterval(randomSquare, 1000);
+  timerId = setInterval(randomSquare, 3000);
 }
 
 function countDownTimer() {
@@ -42,4 +42,5 @@ function countDownTimer() {
 }
 
 let timerId = setInterval(countDownTimer, 1000);
-// movePig();
+
+movePig();
