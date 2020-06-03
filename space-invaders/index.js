@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let invaderId;
 
   // Defining alien invaders
-  const alineInvaders = [
+  const alienInvaders = [
     0,
     1,
     2,
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   // render the alien invaders in the grid
-  alineInvaders.forEach((invader) =>
+  alienInvaders.forEach((invader) =>
     squares[currentInvaderIndex + invader].classList.add('invader')
   );
 
@@ -67,4 +67,28 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.addEventListener('keydown', moveCannon);
+
+  // move invaders
+  function moveInvaders() {
+    const leftEdge = alienInvaders[0] % width === 0;
+    const rightEdge =
+      alienInvaders[alienInvaders.length - 1] % width === width - 1;
+
+    if ((leftEdge && direction === -1) || (rightEdge && direction === 1)) {
+      direction = width;
+    } else if (direction === width) {
+      if (leftEdge) direction = 1;
+      else direction - 1;
+    }
+    for (let i = 0; i < alienInvaders.length; i++) {
+      squares[alienInvaders[i]].classList.remove('invader');
+    }
+    for (let i = 0; i < alienInvaders.length; i++) {
+      [alienInvaders[i]] += direction;
+    }
+
+    for (let i = 0; i < alienInvaders.length; i++) {
+      squares[alienInvaders[i]].classList.add('invader');
+    }
+  }
 });
