@@ -108,6 +108,27 @@ document.addEventListener('DOMContentLoaded', () => {
       const square2 = squares[winningArrays[j][1]];
       const square3 = squares[winningArrays[j][2]];
       const square4 = squares[winningArrays[j][3]];
+
+      // checks to see which player has won
+      if (
+        square1.classList.contains('player-one') &&
+        square2.classList.contains('player-one') &&
+        square3.classList.contains('player-one') &&
+        square4.classList.contains('player-one')
+      ) {
+        // Player one is the winner
+        result.innerHTML = 'Player One wins!!!!!';
+      } else if (
+        square1.classList.contains('player-two') &&
+        square2.classList.contains('player-two') &&
+        square3.classList.contains('player-two') &&
+        square4.classList.contains('player-two')
+      ) {
+        result.innerHTML = 'Player Two Wins!!!!';
+      }
     }
   }
+
+  // add event listener that triggers the check board function when a square is clicked
+  squares.forEach((square) => square.addEventListener('click', checkBoard));
 });
