@@ -51,4 +51,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // render space cannon
   squares[currentShooterIndex].classList.add('cannon');
+
+  // Moving the cannon left and right
+  function moveCannon(e) {
+    squares[currentShooterIndex].classList.remove('cannon');
+    switch (e.keyCode) {
+      case 37:
+        if (currentShooterIndex % width !== 0) currentShooterIndex -= 1;
+        break;
+      case 39:
+        if (currentShooterIndex % width < width - 1) currentShooterIndex += 1;
+        break;
+    }
+    squares[currentShooterIndex].classList.add('cannon');
+  }
+
+  document.addEventListener('keydown', moveCannon);
 });
