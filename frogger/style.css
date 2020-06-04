@@ -11,25 +11,16 @@
   width: 20px;
 }
 
-.end-block {
+.ending-block {
   background-color: red;
 }
 
-.start-block {
+.starting-block {
   background-color: blue;
 }
 
-.frog {
-  background-color: green;
-}
-
 .c1 {
-  background-color: #000000;
-}
-
-.c2,
-.c3 {
-  background-color: grey;
+  background-color: black;
 }
 
 .l1,
@@ -39,6 +30,17 @@
 }
 
 .l4,
-.l5 {
+.l5,
+.lf2,
+.lf3 {
   background-color: lightblue;
+}
+
+.c2,
+.c3 {
+  background-color: grey;
+}
+
+.frog {
+  background-color: darkgreen;
 }
